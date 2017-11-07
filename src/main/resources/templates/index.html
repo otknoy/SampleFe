@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SampleFE</title>
+</head>
+<body>
+<header>
+    <h1>SampleFE</h1>
+</header>
+
+<div>
+    <p>message: <span th:text="${message}">sample message</span></p>
+</div>
+
+<div>
+    <h2>Item list (<span th:text="${#lists.size(items)}">1</span>件)</h2>
+    <div th:each="item : ${items}">
+        <h3 th:text="${item.name}">item name</h3>
+        <p th:text="${item.price}">item price</p>
+    </div>
+</div>
+</body>
+</html>
